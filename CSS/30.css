@@ -1,0 +1,189 @@
+@charset "utf-8";
+
+* { margin: 0; padding: 0;}
+
+a { text-decoration: none; color: inherit; }
+li { list-style: none; }
+
+
+.xi-bars { display: none; }/* 모바일 아이콘이므로 pc화면에서는 없애기 */
+
+.xi-bars span {
+    position: absolute;
+    left: -9999px; /* -마이너스를 이용해 글자를 영역 밖으로 눈에 안 보이게 배치(아이콘만 보이도록) */
+} 
+
+
+header {
+    width: calc(100% - 60px);
+    height: 90px;
+    background-color: #ffffffc5;
+
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 3;
+}
+header .inner {
+    display: flex;
+    justify-content: space-between;
+
+    align-items: center;
+    height: 100%;
+     /* 수직 중앙 정렬하기 
+     pc에는 높이가 변하지 않아 괜찮지만 
+     반응형에는 높이가 달라지기 때문에 line-height: 100px X */
+}
+header nav { margin-right: 20px; }
+header h1 {
+    margin-left: 20px;
+    font-size: 30px;
+}
+header .inner ul li {
+    display: inline-block;
+    margin: 0 10px;
+}
+
+
+
+
+.main {
+    height: 100vh; /* vh 이해하기 */
+}
+.main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    position: relative;
+}
+.main div {
+    /* position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    이렇게 하면 화면의 50% 영역만 차지하게 되서
+    화면이 넓어도 p의 내용이 잘리게 됨
+    (불필요하게 좌우영역이 너무 남음 */
+
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    transform: translate(0, -50%);
+
+    text-align:  center;
+    color: #fff;
+    z-index: 5;
+}
+.main::before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: #25140f6c;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+}
+.main div h2 { font-size: 40px; }
+.main div p { font-size: 20px; margin-top: 10px;}
+
+
+
+
+.con01 {
+    max-width: 1280px; /* 최대크기설정 ???  */
+    width: 95%; 
+    margin: 70px auto;
+
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    /* div 수직 중앙 정렬. flex가 있어야 사용가능 */
+    
+    flex-wrap: wrap;
+    /* 모바일 넓이 변환시 떨어질 수 있도록 미리 설정 */
+}
+.con01 figure {
+    width: 32%;
+    height: 450px;
+}
+.con01 figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.con01 div {
+    width: 32%;
+    
+    display: flex; 
+    flex-direction : column;
+    justify-content: center;
+    /* 수직 정렬 방법 */
+}
+.con01 div p { font-size: 13px; margin-top: 10px; }
+.con01 div a {
+    width: 120px;
+    height: 30px;
+    margin-top: 20px;
+     /* div에게 플렉스를 준 상태라 사이즈 적용이 됨. 
+     div에게 없고 con01에 align있었으면 
+     a한테 display:block 을 줘야 사이즈 적용 가능.*/
+
+    border-radius: 30px;
+    background-color: rgb(46, 17, 6);
+    color: #fff;
+    text-align: center;
+}
+
+
+
+@media all and (max-width:1024px) {
+    header nav { display: none; }
+    header .xi-bars {
+        display: block;
+        margin-right: 20px;
+        font-size: 30px; /* xi-bars 는 폰트 아이콘이라 font-sixe 로 크기 조절 가능 */   
+    }
+    .con01 figure {
+        width: 49%;
+    }
+    .con01 div {
+        width: 90%;
+        margin-top: 15px;
+    }
+} /* ---media 1024 */
+
+
+
+
+@media all and (max-width:767px) {
+    header { height: 70px; }
+    header h1 { font-size: 28px; }
+    .main div h2 { font-size:  28px; }
+    .main div p { font-size: 13px; } 
+    .con01 { margin-top: 45px; }
+
+} /* ---media 767 (태블릿, 모바일 가로) */
+
+
+
+@media all and (max-width:414px) {
+    header { height: 50px;} 
+    header h1 { font-size: 24px; }
+    header .xi-bars { font-size: 22px; }
+    .main div h2 { font-size: 24px; }
+    .main div p { font-size: 11px; }
+
+    .con01 { margin-top: 20px; }
+    .con01 figure {
+        width: 100%;
+        height: 300px;
+        margin: 5px 0;
+    }
+}
+
