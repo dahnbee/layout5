@@ -1,0 +1,162 @@
+@charset "utf-8";
+
+* { margin: 0; padding: 0;}
+
+body { color: #333; }
+
+li { list-style: none; }
+a { text-decoration:none;  color: inherit; }
+
+
+header { /* 전체 상단 영역 */
+    height: 80px;
+    width: calc(100% - 100px);
+    position: relative;
+    margin: 10px auto; /* 영역 센터 고정, 좌우는 자동 */
+    display: flex; 
+    justify-content: flex-end; /* 정렬 : 오른쪽으로 정렬 ??? */
+}
+
+header nav ul li { /* 상단 메뉴들 */
+    display: inline-block; /* 가로로 나열되지만 약간의 여백있음 */
+    line-height: 100px; /* 줄 간격을 상단 영역 높이만큼 하면 메뉴들이 가운데로 옮겨짐 */
+    margin-left: 30px;
+}
+
+header h1 {
+    position: absolute; 
+    top : 50%;
+    left: 0;
+    transform: translateY(-50%); 
+    font-size: 0;
+}
+/* --------------------상단 메뉴 헤더 -------------------------- */
+
+
+
+
+.main {
+    width: calc(100% - 100px);
+    height: 700px;
+    margin: 20px 50px auto;
+}
+.main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+.con01 {
+    margin: 100px auto;
+    width: calc(100% - 100px);
+}
+
+
+.con01 .tit {
+    margin-bottom: 40px;
+}
+.con01 .tit h3 {
+    font-size: 50px;
+    margin-bottom: 10px;
+}
+.con01 .tit p {
+    font-size: 23px;
+}
+
+
+.con01 ul {
+    display: flex;
+    justify-content: space-between;
+}
+.con01 ul li {
+    width: calc(100% / 10 - 20px);
+    height: calc((100vw - 100px) / 10 - 20px);
+    /* vw 브라우저 전체 너비에 따라 값이 달라짐 화면 크기를 움직일 때마다 변화하고 싶을 때
+    vh 와 vw 차이점 ?????  */
+    background-color: rgb(238, 194, 164);
+    color: #2e1302;
+    border-radius: 50%;
+    box-shadow: inset 5PX 5PX 5PX rgb(148, 99, 74);
+    
+    text-align: center;
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+    }
+
+
+
+
+    .con02 {
+        background: url(../img/회색배경.jpg) center center / cover no-repeat;
+    }
+    .con02 .inner {
+        width: 1440px;
+        margin: 0 auto;
+
+        padding: 40px 0;
+
+        background-attachment: fixed;
+    }
+    .con02 .inner .list {
+        display: flex;
+        justify-content: space-between;
+    }
+    .con02 .tit h3 {
+        font-size: 35px;
+        color: #2e1302;
+        display: inline;
+        border-radius: 20%;
+    }
+    .con02 .tit p {
+        margin: 10px 0 25px;
+        color:#2e1302;
+        font-size: 18px;
+    }
+
+    .con02 .inner .list .item {
+        width: calc(100% / 5 - 20px);
+        background-color: white;
+        padding: 20px;
+        box-sizing: border-box; /* 내가 설정한 width값에 패딩 포함 */
+    }
+    .con02 .inner .list .item:hover {
+        transform: translateY(-20px);
+        transition: 0.5s;
+    }
+
+    .con02 .inner .list .item figure {
+        height: 300px;
+        position: relative;
+    }
+    .con02 .inner .list .item figure img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .con02 .inner .list .item figure img.off {
+        display: none;
+    }
+    .con02 .inner .list .item:hover figure img.off {
+        display: block;
+    }
+    .con02 .inner .list .item:hover figure img.on {
+        display: none;
+    }
+    .con02 .inner .list .item figure p {
+        height: 30px;
+        padding: 2px 10px;
+        background-color: rgb(214, 149, 95);
+        color: #fff;
+
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    .con02 .inner .list .item h4 {
+        font-size: 20px;
+        margin-top: 10px;
+    }
+   

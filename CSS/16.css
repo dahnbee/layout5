@@ -1,0 +1,36 @@
+@charset "utf-8";
+
+*    { margin: 0; padding: 0;}
+body { color: #333; text-align: center;}
+
+h2 { color: #000; }
+
+h3::before { content: '작중 '; }
+
+h3::after { content: '역'; }
+
+h4 {
+    position: relative;
+    font-size: 20px;
+    margin-top: 50px;
+    text-align: center;
+    color: ;
+    display: inline-block; /* 주어진 영역만큼만.. */
+    padding: 0 10px;
+    color: #FFF;
+}
+
+h4::before { /* 인라인 요소임 */
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1; /* 음수는 뒤로, 양수는 앞으로 위치*/
+    display: block; /* 블럭 요소로 바꾸어서 위에 위치 */
+    width: 100%;
+    height: 25px;
+    background-color: #000000;
+    
+    
+}
+

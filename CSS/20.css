@@ -1,0 +1,69 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+
+
+@font-face {
+    font-family: 'Pretendard-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+* {margin: 0; padding: 0;}
+
+body { 
+    color: #333; 
+    background-color: antiquewhite;
+    font-family: 'Pretendard-Regular';
+}
+
+.cont01 {
+    width: 1440px;
+    margin: 100px auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.cont01 figure {
+    width: 480px;
+    height: 600px;
+    border: 2px solid #333;
+}
+
+.cont01 figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.cont01 div {
+    width: 940px;
+    border: 2px solid #333;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: center;
+    /* flex설정으로 각 p나 h3가 자기 영역만큼만 잡히므로
+    div 영역 내 센터 값을 줘야 중앙배치가 된다 */
+
+   
+    /* display: flex; 
+    flex-direction: column;
+    - 글자까지 가운데 배치됨 왜? flex설정이나 width값은 무시되고 무조건 100%가 되기에
+    justify-content: space-between; */
+    
+    text-align: center;
+    padding: 50px;
+    box-sizing: border-box;
+}
+
+.cont01 div p {
+    font-size: 25px;
+    font-family: 'Great Vibes', cursive;
+}
+.cont01 div h3 { font-size: 40px;}
+
+
+

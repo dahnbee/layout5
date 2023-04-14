@@ -1,0 +1,123 @@
+@charset "utf-8";
+
+* { margin: 0;  padding: 0; }
+
+body {
+    color: #333;
+}
+
+.list {
+    width: 1280px;
+    margin: 100px auto;
+    display: flex;
+    justify-content: space-between;
+    /* 둘이 같이 써야함. set! */
+}
+
+.list>div { /* >를 쓰면 직계 자식들만 선택되도록 설정. .item안에 div는 선택 안됨!*/
+    width: 400px;
+    border: 3px solid #000;
+}
+
+.list > div figure { 
+    height: 500px;
+}
+
+.list > div figure img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.list div h4 { font-size: 22px; }
+
+
+
+
+/* ----------첫번째 사진영역---------- */
+.list .item01 { 
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+    /* 영역 벗어나는 자식들은 보이지 않게 설정 */
+}
+
+.list .item01 div {
+    position: absolute;
+    left: 0;
+    bottom: -100%; /* 이미지 밖으로 위치*/
+    background-color: rgba(24, 24, 24, 0.596);
+    color: rgb(241, 241, 241);
+    padding: 20px;
+    transition: 0.5s; /* 내려갈 때도 속도 설정 */
+}
+
+.list .item01:hover div { /* 마우스를 올렸을 때 */
+    bottom: 0; 
+    transition: 0.5s; /* 움직이는 속도. s(초) */
+}
+
+
+
+
+
+/* ----------두번째 사진영역---------- */
+.list .item02 { 
+    position: relative;
+    height: 500px;
+}
+
+.list .item02 div { 
+    position: absolute;
+   /*  display: none; - 존재를 없애기 */
+   opacity: 0;
+   /* 투명도 조절. 0은 없고 1은 100%  */
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: rgba(24, 24, 24, 0.644);
+    color: rgb(241, 241, 241);
+    padding: 100px 30px;
+    transition: 0.5s;
+    box-sizing: border-box;
+    /* 설정한 영역 만큼 내부 여백이 잡힘 ???? */
+}
+
+.list .item02:hover div {
+   /*  display: block; - transition 먹히지 않음 */
+   opacity: 1; /* 투명도 100%해서 다시 보이도록 */
+   transition: 0.5s; 
+}
+
+
+
+
+/* ----------세번째 사진영역 --------- */
+.list .item03 {
+    position: relative;
+    height: 500px;
+    overflow: hidden;
+}
+
+.list .item03 div {
+    position: absolute;
+    left: 0;
+    bottom: -26%;
+    background-color: rgb(0, 0, 0);
+    color: rgb(241, 241, 241);
+    padding: 20px;
+    transition: 0.5s;
+}
+
+.list .item03 div h4 {
+    margin-bottom: 20px;
+}
+
+.list .item03:hover div {
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.432);
+    transition: 0.5s; 
+}
+
+
+
