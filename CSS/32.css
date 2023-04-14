@@ -347,15 +347,15 @@ header .inner .h_bottom .pc .gnb .dep01 .dep02 li:hover {
         display: block;
     }
     .best .list .item .text h4 {
-        font-size: 15px;
+        font-size: 14px;
         height: auto;
         margin: 10px 0 20px;
     }
     .best .list .item .text .pri p {
-        font-size: 13px;
+        font-size: 12px;
     }
     .best .list .item .text .pri div {
-        font-size: 15px;
+        font-size: 13px;
     }
 }/* --- 414 --- 414 --- 414 --- */
 
